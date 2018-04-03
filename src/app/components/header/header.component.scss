@@ -1,0 +1,29 @@
+.ms-header {
+
+  .ms-header--toolbar {
+    padding: 0 200px;
+
+    mat-toolbar-row {
+      padding: 0;
+    }
+
+    .toolbar--title {
+      display: contents;
+      .title--icon {
+        padding-right: 15px;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .ms-header {
+    .ms-header--toolbar {
+      padding: 0px 20px;
+    }
+  }
+}
+
+.toolbar-spacer {
+  flex: 1 1 auto;
+}

@@ -1,0 +1,39 @@
+<section class="ms-home">
+
+  <section class="ms-home--search">
+    <mat-form-field class="search--field">  
+      <input type="text" [(ngModel)]="movieData" matInput placeholder="Search for a movie title" (keyup.enter)="doSearch(movieData)">
+      <button mat-raised-button matSuffix color="primary" (click)="doSearch(movieData)">
+        <mat-icon>search</mat-icon>        
+      </button> 
+    </mat-form-field>
+  </section>
+  
+  <section class="ms-home--movie-details" *ngIf="!!movies">
+
+    <mat-card class="movie-details--list" *ngFor="let movie of movies.Search" (click)="goMovieDetail(movie.imdbID)">
+      <mat-card-content class="list-content">
+        <figure class="content--cover">
+          <img [src]="movie.Poster" [alt]="movie.Title" *ngIf="movie.Poster !== 'N/A'">
+          <div *ngIf="movie.Poster === 'N/A'" class="cover--image-error">
+            <mat-icon class="title--icon">broken_image</mat-icon>
+          </div>
+        </figure>
+        
+
+        <section class="content--infos">
+          <h1 class="infos--title">{{ movie.Title }}</h1>
+          <p class="infos--details">{{ movie.Year }}</p>          
+          <p class="infos--details">{{ movie.Type }}</p>
+          <button class="infos--button" mat-raised-button color="primary">See details</button>
+        </section>
+      </mat-card-content>
+    </mat-card>
+    
+  </section>
+
+  <section class="ms-home-movie-error" *ngIf="movies">
+    <p *ngIf="movies.Error"> {{ movies.Error }} </p>
+  </section>
+
+</section>

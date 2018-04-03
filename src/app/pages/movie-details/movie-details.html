@@ -1,0 +1,51 @@
+<section class="ms--movie-details">
+
+  <figure class="movie-details--cover">
+    <img [src]="movieDetails?.Poster" alt="">
+  </figure>
+  
+  <section class="movie-details--infos" *ngIf="movieDetails">
+    <div class="infos-content">
+
+      <div class="details--infos-title">
+        <p class="detail-title">
+          {{ movieDetails?.Title }} <span>({{ movieDetails?.Year }})</span>
+        </p>
+        <p class="detail-infos">
+          <span>{{ movieDetails?.Genre }} <i>|</i></span> 
+          <span>{{ movieDetails?.Runtime }} <i>|</i></span>
+          <span>{{ movieDetails?.Type }} <i>|</i></span>
+          <span>{{ movieDetails?.Country }}</span>
+        </p>
+      </div>
+
+      <div class="details--infos-plot">
+        <p>{{ movieDetails?.Plot }}</p>
+      </div>
+
+      <div class="details--infos-list">
+        <div class="list-item">
+          <p class="item-label">Director</p>
+          <p class="item-info">{{ movieDetails?.Director }}</p>
+        </div>
+        
+        <div class="list-item">
+          <p class="item-label">Production</p>
+          <p class="item-info">{{ movieDetails?.Production }}</p>
+        </div>
+
+        <div class="list-item">
+          <p class="item-label">Actors</p>
+          <p class="item-info">{{ movieDetails?.Actors }}</p>
+        </div>
+
+        <div class="list-item">
+          <p class="item-label">Awards</p>
+          <p class="item-info">{{ movieDetails?.Awards }}</p>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+
+</section>

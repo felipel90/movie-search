@@ -1,0 +1,9 @@
+.ms-main {
+  padding: 30px 200px;
+}
+
+@media (max-width: 767px) {
+  .ms-main {
+    padding: 30px 20px;
+  }
+}
